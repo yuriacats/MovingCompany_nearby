@@ -2,9 +2,14 @@ import googlemaps
 import sys
 from datetime import datetime
 import csv
-import pprint  # for debug
 import time
-
+import os
+from os.path import join, dirname
+from dotenv import load_dotenv
+load_dotenv(verbose=True)
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+GOOGLEAPIKEY=os.environ.get("APIKEY")
 
 def main(csv_name,add_name):
     key = GOOGLEAPIKEY
